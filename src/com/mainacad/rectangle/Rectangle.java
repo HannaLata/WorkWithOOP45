@@ -1,6 +1,8 @@
 package com.mainacad.rectangle;
 
-public class Rectangle {
+import com.mainacad.abs.AbstractShape;
+
+public class Rectangle extends AbstractShape {
 
     private double length;
     private double width;
@@ -21,6 +23,7 @@ public class Rectangle {
         this.width = width;
     }
 
+    @Override
     public double getArea() {
 
         return length*width;

@@ -1,6 +1,8 @@
 package com.mainacad.trapezoid;
 
-public class Trapezoid {
+import com.mainacad.abs.AbstractShape;
+
+public class Trapezoid extends AbstractShape {
 
     private double side1;
     private double side2;
@@ -30,6 +32,7 @@ public class Trapezoid {
         this.height = height;
     }
 
+    @Override
     public double getArea() {
 
         return ((side1*side2)/2)*height;

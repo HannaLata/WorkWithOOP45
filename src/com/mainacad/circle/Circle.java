@@ -1,6 +1,8 @@
 package com.mainacad.circle;
 
-public class Circle {
+import com.mainacad.abs.AbstractShape;
+
+public class Circle extends AbstractShape {
 
     private double radius;
 
@@ -12,6 +14,7 @@ public class Circle {
         this.radius = radius;
     }
 
+    @Override
     public double getArea() {
 
         return radius*radius*Math.PI;

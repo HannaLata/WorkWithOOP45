@@ -1,5 +1,6 @@
 package com.mainacad;
 
+import com.mainacad.abs.Shape;
 import com.mainacad.circle.Circle;
 import com.mainacad.rectangle.Rectangle;
 import com.mainacad.square.Square;
@@ -12,8 +13,9 @@ public class ApplicationRunner {
 
         Square square = new Square();
         square.setSide(10.0);
+        square.setName("Square");
 
-        System.out.println("Square with side " + square.getSide() + " has area " + square.getArea());
+        System.out.println(square.getName() + " with side " + square.getSide() + " has area " + square.getArea());
 
         Circle circle = new Circle();
         circle.setRadius(10.0);
@@ -41,6 +43,55 @@ public class ApplicationRunner {
 
         System.out.println("Trapezoid with first side " + trapezoid.getSide1() + ", second side " +
                 trapezoid.getSide2() + " and height " + trapezoid.getHeight() + " has area " + trapezoid.getArea());
+
+        Shape maxShape;
+
+        if ( circle.getArea() > square.getArea() ) {
+
+            maxShape = circle;
+        } else {
+            maxShape = square;
+        }
+        if ( trapezoid.getArea() > maxShape.getArea() ) {
+
+            maxShape = trapezoid;
+        }
+        if ( triangle.getArea() > maxShape.getArea() ) {
+
+            maxShape = triangle;
+        }
+        if ( rectangle.getArea() > maxShape.getArea() ) {
+
+            maxShape = rectangle;
+        }
+
+        System.out.println("Max shape is " + maxShape.getClass().getSimpleName() + " and has area " + maxShape.getArea());
+
+        Shape minShape;
+
+        if ( square.getArea() < circle.getArea() ) {
+
+            minShape = square;
+        } else {
+
+            minShape = circle;
+        }
+        if ( rectangle.getArea() < minShape.getArea() ) {
+
+            minShape = rectangle;
+        }
+
+        if ( triangle.getArea() < minShape.getArea() ) {
+
+            minShape = triangle;
+        }
+
+        if ( trapezoid.getArea() < minShape.getArea() ) {
+
+            minShape = trapezoid;
+        }
+
+        System.out.println("Min shape is " + minShape.getClass().getSimpleName() + " and has area " + minShape.getArea());
         
 
     }
