@@ -41,6 +41,7 @@ public class ApplicationRunner {
 
         System.out.println("Trapezoid with first side " + trapezoid.getSide1() + ", second side " +
                 trapezoid.getSide2() + " and height " + trapezoid.getHeight() + " has area " + trapezoid.getArea());
+        
 
     }
 
